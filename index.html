@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+
+  <!-- Optional: change font or remove this -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Portfolio of Your Name — developer, designer, etc.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#hero">Your Name</a>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Hi — I’m <span class="accent">Your Name</span></h1>
+          <p class="lead">I’m a <strong>software engineer</strong> who builds thoughtful websites and data-driven apps. I enjoy learning new tools, solving problems, and collaborating on products that make an impact.</p>
+          <p class="hero-actions">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="profile-photo" aria-hidden="true">
+            <!-- simple SVG placeholder — replace with an image if you like -->
+            <svg viewBox="0 0 120 120" role="img" class="avatar">
+              <rect width="120" height="120" rx="14" fill="#eee"></rect>
+              <circle cx="60" cy="42" r="22" fill="#ddd"></circle>
+              <rect x="20" y="74" width="80" height="28" rx="6" fill="#ddd"></rect>
+            </svg>
+          </div>
+          <div class="hero-info">
+            <h3>Currently</h3>
+            <p>Learning modern full-stack patterns & building portfolio projects.</p>
+            <p class="muted">Location · Seattle, WA · Open to remote work</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I’m a <strong>data-focused</strong> developer with experience in web development, automation, and building clean interfaces. I love turning ideas into polished, maintainable code and enjoy mentoring and collaborating with others.</p>
+        <p>Briefly: <strong>Problem solving</strong> · <strong>Readable code</strong> · <strong>User-focused design</strong></p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <h4>Languages</h4>
+            <p>JavaScript · Python · SQL · HTML · CSS</p>
+          </div>
+          <div class="skill">
+            <h4>Frameworks & Tools</h4>
+            <p>React · Node.js · Jekyll · Git · Docker</p>
+          </div>
+          <div class="skill">
+            <h4>Data & Cloud</h4>
+            <p>Postgres · BigQuery · AWS · GitHub Actions</p>
+          </div>
+          <div class="skill">
+            <h4>Other</h4>
+            <p>Testing · Accessibility · Responsive design · UX</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="muted">A few highlights — click each to view code or demo.</p>
+
+        <div class="projects-grid">
+          <!-- Project card -->
+          <article class="project-card">
+            <div class="project-meta">
+              <h3 class="project-title">Project One</h3>
+              <p class="project-desc">Short one-sentence summary of what this project does and why it matters.</p>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">Short description — the tech used, and outcome or learning points.</p>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <h3 class="project-title">Project Three</h3>
+              <p class="project-desc">Add a small portfolio project, dataset exploration or app here.</p>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">Live</a>
+              <a href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section alt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <p>If you’d like to work together, talk about a role, or just say hi — drop a message.</p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>Resume:</strong> <a href="#" target="_blank" rel="noopener">Download PDF</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/username" target="_blank" rel="noopener">github.com/username</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Your email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="6" placeholder="Say hello..." required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn">Send</button>
+            <button type="reset" class="btn btn-outline">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Your Name. Built with ❤️.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
