@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project • Enterprise Procurement Integration</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <main class="container">
+    <a class="inline" href="../index.html">← Back to Projects</a>
+    <h1>Enterprise Procurement Integration for Fortune 500 Company Client</h1>
+    <p><em>Role: Product-minded Senior Application Development Analyst 
+      • Project was split in two phases . Phase1: Migrating Master Data (Supplier, Currency) to 3rd party System and validate
+      . Phase2 Build Outbound and Inbound Integrations from and to Oracle ERP for transactional data (Reqs, Po, Invoice, Payments)
+      . Duration for each phase : 8–9 months 
+      • Stack: Oracle R12, PL/SQL, Python, REST APIs, Middleware</em></p>
+
+    <!-- Confidentiality Note -->
+    <section class="card">
+      <p class="muted">
+        Note: Client name, data, and internal artifacts are omitted due to confidentiality. This project focuses on
+        approach, cross-functional collaboration, data integrity controls, and measurable outcomes.
+      </p>
+    </section>
+
+    <!-- Overview -->
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        Planned, designed, and implemented API-based data flows for <strong>Supplier</strong>, <strong>Requisition</strong>,
+        <strong>Purchase Order (PO)</strong>, <strong>Invoice</strong>, and <strong>Payment</strong> modules. Objective:
+        enable seamless, secure transfer of master & transactional data across ERP, procurement, and finance systems—
+        improving procurement efficiency and reducing reconciliation effort.
+      </p>
+      <ul>
+        <li>💼 Business goal: streamline P2P operations, shorten cycle time, strengthen auditability.</li>
+        <li>🧩 Technical goal: User friendly UI, reliable, observable integrations with clear contracts & error handling.</li>
+        <li>🤝 Collaboration: continuous alignment with business, middleware, security, DBA, and QA teams.</li>
+      </ul>
+    </section>
+
+    <!-- Objectives & KPIs -->
+    <section class="card">
+      <h2>Objectives & Success Metrics</h2>
+      <ul>
+        <li>Increase procurement efficiency by <strong>~30%</strong> (cycle time & touch points).</li>
+        <li>Reduce month-end reconciliation effort by <strong>~50%</strong>.</li>
+        <li>Improve data accuracy across supplier/PO/invoice attributes by <strong>~35%</strong>.</li>
+        <li>Achieve SLA on integration latency and first-pass success rates in UAT.</li>
+      </ul>
+    </section>
+
+    <!-- Discovery & Feasibility -->
+    <section class="card">
+      <h2>Phase 1 — Discovery & Feasibility</h2>
+      <ul>
+        <li>Ran <strong>requirements workshops</strong> with Procurement and Finance to map As-Is vs To-Be flows.</li>
+        <li>Partnered with <strong>Middleware/Integration </strong> team to validate API availability, throughput, and error-handling capabilities.</li>
+        <li>Aligned on <strong>data ownership</strong> (system of record per entity) and <strong>and how often it should be updated.</strong>.</li>
+        <li>Secured stakeholder buy-in on scope, risks, and a phased rollout plan.</li>
+      </ul>
+    </section>
+
+    <!-- Design & Data Mapping -->
+    <section class="card">
+      <h2>Phase 2 — Design & Data Mapping</h2>
+      <p>
+Designed API contracts and data models, working with business analysts to ensure mappings followed company policies, tax rules, and approval workflows.
+      </p>
+      <ul>
+        <li>Owned <strong>field-level data mapping</strong> across Oracle R12 ⇄ Procurement ⇄ Payments (supplier terms, tax codes, cost centers, PO/Invoice totals).</li>
+        <li>Worked with <strong>middleware engineers</strong> on transformation rules, idempotency keys, and versioning.</li>
+        <li>Defined <strong>error standards</strong> (retry/backoff, correlation IDs) and <strong>security</strong> (,least-privilege roles).</li>
+        <li>Reviewed <strong>OpenAPI specs</strong>, sequence diagrams, and mapping workbooks with stakeholders for sign-off.</li>
+      </ul>
+    </section>
+
+    <!-- Build & Execution -->
+    <section class="card">
+      <h2>Phase 3 — Build & Execution</h2>
+      <ul>
+        <li>Iterative delivery by module: start with <strong>Supplier</strong> (lower blast radius)in Phase1 migration, then <strong>Req → PO → Invoice → Payment</strong>.</li>
+        <li>Implemented <strong>PL/SQL</strong> packages (Oracle operations) and validation using Excel and <strong>Python</strong> script.</li>
+        <li>Daily touchpoints with <strong>business team</strong> for timely clarifications on feasibility & rule changes.</li>
+        <li>Joint <strong>code reviews</strong> and <strong>dry-runs</strong> with middleware to stabilize contracts and auth flows.</li>
+      </ul>
+    </section>
+
+    <!-- Testing & Data Verification -->
+    <section class="card">
+      <h2>Phase 4 — Testing & Data Verification</h2>
+      <p>
+        Established a multi-layer validation framework to guarantee correctness and audit readiness.
+      </p>
+      <ul>
+        <li><strong>Technical verification:</strong> field-by-field mapping checks and schema validation across systems.</li>
+        <li><strong>Business verification:</strong> end-to-end scenarios (Supplier → Req → PO → Invoice → Payment).</li>
+        <li><strong>Financial verification:</strong> <em>amount matching</em> across <strong>PO, Invoice, and Payment</strong> (totals, tax, freight). Exception reports flagged any mismatches.</li>
+        <li>UAT with Procurement & Finance; first-pass success rate ~<strong>97%</strong> prior to go-live.</li>
+      </ul>
+    </section>
+
+    <!-- Go-Live & Hypercare -->
+    <section class="card">
+      <h2>Phase 5 — Go-Live & Hypercare</h2>
+      <ul>
+        <li>Coordinated cutover with DBA, middleware, and finance; maintained rollback and recovery plans.</li>
+        <li>Deployed <strong>telemetry dashboards</strong> (SQL/Excel BI): latency, throughput, HTTP codes, exception categories, and <strong>amount parity</strong> alerts.</li>
+        <li>Three months hypercare syncs; zero Sev-1 incidents; month-end close effort ↓ ~<strong>50%</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- Continuous Improvement -->
+    <section class="card">
+      <h2>Phase 6 — Continuous Improvement</h2>
+      <ul>
+        <li>Retrospectives with business & middleware; updated mapping docs with version control.</li>
+        <li>Instituted governance for schema changes; enhanced reconciliation reports for audit.</li>
+        <li>Proposed Phase-2: anomaly detection on payment discrepancies; automated resubmission flows.</li>
+      </ul>
+    </section>
+
+    <!-- Results -->
+    <section class="card">
+      <h2>Results</h2>
+      <ul>
+        <li>Procurement efficiency ↑ ~<strong>30%</strong>.</li>
+        <li>Month-end reconciliation effort ↓ ~<strong>50%</strong>.</li>
+        <li>Data accuracy across supplier/PO/invoice ↑ ~<strong>35%</strong>.</li>
+        <li>Verified <strong>amount matching</strong> across PO ⇄ Invoice ⇄ Payment prior to go-live; automated alerts post-launch.</li>
+      </ul>
+    </section>
+
+    <!-- Key Deliverables -->
+    <section class="card">
+      <h2>Key Deliverables (What I Shipped)</h2>
+      <ul>
+        <li>Integration roadmap & issue and risk log, and consistent updates with stakeholders.</li>
+        <li>Data mapping workbook (canonical model, field-level mappings, transformations).</li>
+        <li>OpenAPI/contract specs, sequence diagrams, runbooks.</li>
+        <li>UAT plan & tracker, amount-matching verification matrix.</li>
+        <li>Telemetry dashboards & exception handling playbooks.</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section class="card">
+      <h2>Reflection</h2>
+      <p>
+        Success depended on more than APIs: it required <strong>constant collaboration</strong> with the business for timely inputs,
+        tight partnership with <strong>middleware</strong> on transformations and reliability, and a relentless focus on
+        <strong>data verification</strong>—especially PO/Invoice/Payment amount parity. This blend of product thinking, delivery
+        orchestration, and engineering discipline created durable, measurable impact.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
