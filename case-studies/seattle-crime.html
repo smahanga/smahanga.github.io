@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study • Seattle Crime Analysis (2024)</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <main class="container">
+    <a class="inline" href="../index.html">← Back to Projects</a>
+    <h1>Seattle Crime Analysis (2024)</h1>
+    <p><em>MSIS 502 • Team 4: Yousef, Alysia, Shraddha, Trevor</em></p>
+
+    <!-- Overview -->
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        A data-driven study of Seattle Police Department’s 2024 crime data (81,771 reports) to identify
+        <strong>top offenses</strong>, <strong>hotspot neighborhoods</strong>, and <strong>temporal trends</strong>.
+        We also developed <strong>daily incident forecasts</strong> to guide staffing and prevention strategies.
+      </p>
+    </section>
+
+    <!-- Dataset -->
+    <section class="card">
+      <h2>Dataset</h2>
+      <ul>
+        <li>Source: Seattle PD public crime records (filtered to 2024).</li>
+        <li>Fields: offense category/subcategory, date/time, neighborhood, precinct/beat, lat/long.</li>
+        <li>Cleaning: standardized timestamps, removed invalid rows, completed daily index.</li>
+      </ul>
+    </section>
+
+    <!-- Objectives -->
+    <section class="card">
+      <h2>Objectives</h2>
+      <ol>
+        <li>Identify frequent crime types and subtypes.</li>
+        <li>Locate geographic hotspots by neighborhood and precinct.</li>
+        <li>Analyze temporal patterns and forecast daily incident volumes.</li>
+      </ol>
+    </section>
+
+    <!-- Key Insights -->
+    <section class="card">
+      <h2>Key Insights</h2>
+      <ul>
+        <li><strong>Top category:</strong> Larceny/Theft (vehicle-related thefts prominent).</li>
+        <li><strong>Hotspots:</strong> Capitol Hill, Downtown, Queen Anne, Northgate, South Lake Union.</li>
+        <li><strong>Seasonality:</strong> Lower incidents in Feb–Mar; higher in Sep–Oct.</li>
+        <li><strong>Hourly/Weekly:</strong> Weekday peaks in late morning–early afternoon; lowest 12–5 a.m.</li>
+      </ul>
+
+      <!-- Optional visuals -->
+      <!--
+      <img class="card" src="../assets/images/seattle-crime/top-categories.png" alt="Top crime categories" />
+      <img class="card" src="../assets/images/seattle-crime/hotspots.png" alt="Hotspot map" />
+      -->
+    </section>
+
+    <!-- Modeling -->
+    <section class="card">
+      <h2>Modeling & Forecasting</h2>
+      <p><strong>Goal:</strong> Forecast daily citywide incidents (train Jan–Oct 2024, validate Nov–Dec 2024).</p>
+      <ul>
+        <li><strong>Features:</strong> trend index, weekday dummies, annual seasonality (sin/cos), date continuity.</li>
+        <li><strong>Linear Regression:</strong> MAE 19.1  RMSE 23.3 — best overall accuracy.</li>
+        <li><strong>Random Forest:</strong> MAE 25.31  RMSE 31.14 — captured short-term spikes.</li>
+      </ul>
+      <p><em>Takeaway:</em> Simpler seasonal-trend features generalized best; richer multi-year data could further improve performance.</p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="card">
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Reinforce security in high-theft areas: parking access control, CCTV, lighting.</li>
+        <li>Deploy targeted patrols at hotspot neighborhoods and peak hours.</li>
+        <li>Enable real-time alerts and community awareness campaigns.</li>
+      </ul>
+    </section>
+
+    <!-- Challenges -->
+    <section class="card">
+      <h2>Challenges & Next Steps</h2>
+      <ul>
+        <li>One-year window limits seasonality detection → extend to multi-year trends.</li>
+        <li>Ambiguity between report vs offense timestamps → align with response-time data.</li>
+        <li>Integrate socioeconomic and environmental covariates for improved forecasting.</li>
+      </ul>
+    </section>
+
+    <!-- Downloads -->
+    <section class="card">
+      <h2>Downloads</h2>
+      <p>
+        <a class="inline" href="../assets/docs/MSIS502_SeattleCrime_ProjectReport.pdf" target="_blank" rel="noopener">📄 Project Report (PDF)</a>
+        •
+        <a class="inline" href="../assets/docs/MSIS502_SeattleCrime_Presentation.pptx" target="_blank" rel="noopener">🖥️ Slides (PPTX)</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
