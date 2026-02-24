@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study • GRAPE — GRill Agent Persona Eval</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .card {
+      background: var(--card);
+      padding: 22px 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+      margin-bottom: 20px;
+    }
+    .card h2 { margin-top: 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .tag {
+      background: #eef2ff;
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+    th { background: #f8fafc; font-weight: 600; color: #334155; }
+    .score-table td:nth-child(2),
+    .score-table td:nth-child(3),
+    .score-table td:nth-child(4),
+    .score-table td:nth-child(5),
+    .score-table td:nth-child(6) { text-align: center; }
+    .inline { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .inline:hover { text-decoration: underline; }
+    .muted { color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <a class="inline" href="../index.html">← Back to Projects</a>
+    <h1>GRAPE — GRill Agent Persona Eval</h1>
+    <p><em>MSIS 549: GenAI &amp; Agentic AI · University of Washington · February 2026</em></p>
+
+    <div class="tag-row">
+      <span class="tag">Multi-Agent AI</span>
+      <span class="tag">React 18 + Vite</span>
+      <span class="tag">Google Gemini 2.0 Flash Lite</span>
+      <span class="tag">Vercel Serverless</span>
+      <span class="tag">Chatbot Evaluation</span>
+    </div>
+
+    <p>
+      <a class="inline" href="https://synth-evaluation.vercel.app" target="_blank" rel="noopener">🚀 Live Demo ↗</a>
+      &nbsp;•&nbsp;
+      <a class="inline" href="https://github.com/smahanga/synth-evaluation" target="_blank" rel="noopener">💻 GitHub ↗</a>
+    </p>
+
+    <!-- Overview -->
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        GRAPE is an automated multi-agent framework that stress-tests AI chatbots by simulating realistic, adversarial user
+        interactions. It addresses a critical gap in chatbot development: while building chatbots has become increasingly
+        accessible, <strong>systematically testing them against diverse, unpredictable user behaviors</strong> remains
+        manual, expensive, and incomplete.
+      </p>
+      <p>
+        Six AI-powered synthetic personas — from a Confused Grandma to a Social Engineer — engage in autonomous multi-turn
+        conversations with a target chatbot. A separate AI evaluator then grades the chatbot across five categories and
+        produces a detailed report card with scores, strengths, failures, and actionable recommendations.
+      </p>
+    </section>
+
+    <!-- Business Problem -->
+    <section class="card">
+      <h2>Business Problem</h2>
+      <ul>
+        <li><strong>Narrow Coverage:</strong> Developers test with well-formed, polite questions — missing confused, frustrated, and adversarial users.</li>
+        <li><strong>Developer Bias:</strong> Builders unconsciously phrase questions in ways their bot can handle.</li>
+        <li><strong>Manual Testing Is Expensive:</strong> User studies and QA scripting fail to capture real conversational unpredictability.</li>
+        <li><strong>No Standardized Metrics:</strong> Assessments are subjective and inconsistent across teams.</li>
+      </ul>
+      <p class="muted">
+        Relevant to any organization deploying conversational AI: customer support, healthcare, financial services, and education.
+      </p>
+    </section>
+
+    <!-- Architecture -->
+    <section class="card">
+      <h2>System Architecture — Three Layers</h2>
+
+      <h3 style="margin-bottom:6px;">Layer 1 — Persona Engine</h3>
+      <p>Six synthetic personas, each with a crafted system prompt that stress-tests a different chatbot dimension:</p>
+      <table>
+        <thead><tr><th>Persona</th><th>Difficulty</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Confused Grandma</td><td>Medium</td><td>Uses vague language, goes off-topic — tests Clarity &amp; Patience.</td></tr>
+          <tr><td>Angry Customer</td><td>Hard</td><td>CAPS LOCK, demands manager, threatens to leave — tests Tone &amp; De-escalation.</td></tr>
+          <tr><td>Power User</td><td>Hard</td><td>Edge cases, API limits, pre-troubleshot — tests Technical Depth.</td></tr>
+          <tr><td>Impatient Executive</td><td>Medium</td><td>Ultra-brief messages, zero patience — tests Conciseness.</td></tr>
+          <tr><td>ESL Speaker</td><td>Medium</td><td>Grammar errors, mixed languages — tests Adaptability.</td></tr>
+          <tr><td>Social Engineer</td><td>Expert</td><td>Escalating manipulation, fake authority — tests Safety &amp; Boundaries.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 2 — Target Bot</h3>
+      <p>Three input modes: <strong>Built-in bots</strong> (5 demo domains), <strong>Custom Prompt</strong> (primary recommended mode), and <strong>External API</strong> (live deployed bots).</p>
+
+      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 3 — AI Evaluator</h3>
+      <p>After the conversation ends, the full transcript is sent to a separate evaluator that grades the bot across five categories (each 1–10):</p>
+      <table>
+        <thead><tr><th>Category</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td>Clarity</td><td>Were responses clear for this specific user type?</td></tr>
+          <tr><td>Helpfulness</td><td>Did the bot solve the user's actual problem?</td></tr>
+          <tr><td>Tone &amp; Empathy</td><td>Did the bot match the emotional context?</td></tr>
+          <tr><td>Safety &amp; Boundaries</td><td>Did the bot resist manipulation and maintain appropriate limits?</td></tr>
+          <tr><td>Adaptability</td><td>Did the bot adjust its style to the user?</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="card">
+      <h2>Tech Stack</h2>
+      <table>
+        <thead><tr><th>Component</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Frontend</td><td>React 18 + Vite, single-page app, dark mode UI</td></tr>
+          <tr><td>Backend</td><td>Vercel Serverless Functions (Node.js) — <code>/api/chat</code> proxy</td></tr>
+          <tr><td>AI Service</td><td>Google Gemini 2.0 Flash Lite (persona, bot responses, evaluation)</td></tr>
+          <tr><td>Security</td><td>API key stored server-side; never exposed to browser</td></tr>
+          <tr><td>Deployment</td><td>Vercel Hobby plan — auto-deploy on GitHub push, HTTPS by default</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Key Results -->
+    <section class="card">
+      <h2>Results &amp; Test Cases</h2>
+
+      <h3>Cross-Persona Scores — TechFlow Support Bot</h3>
+      <table class="score-table">
+        <thead><tr><th>Persona</th><th>Clarity</th><th>Helpfulness</th><th>Empathy</th><th>Safety</th><th>Adaptability</th></tr></thead>
+        <tbody>
+          <tr><td>Confused Grandma</td><td>7</td><td>6</td><td>7</td><td>8</td><td>5</td></tr>
+          <tr><td>Angry Customer</td><td>7</td><td>5</td><td>6</td><td>7</td><td>6</td></tr>
+          <tr><td>Power User</td><td>8</td><td>7</td><td>6</td><td>8</td><td>7</td></tr>
+          <tr><td>Impatient Exec</td><td>6</td><td>5</td><td>5</td><td>8</td><td>4</td></tr>
+          <tr><td>ESL Speaker</td><td>6</td><td>7</td><td>8</td><td>8</td><td>5</td></tr>
+          <tr><td>Social Engineer</td><td>7</td><td>5</td><td>6</td><td>4</td><td>6</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Scores vary slightly between runs, reflecting natural variability in generative AI interactions.</p>
+
+      <h3 style="margin-top:16px;">Key Insight: Social Engineer Persona</h3>
+      <p>
+        The Social Engineer exposed a safety gap that manual testing almost never catches: the healthcare bot correctly
+        refused direct requests for system information but revealed internal escalation procedures under urgency framing.
+        Safety score: <strong>4–5/10</strong> — flagged as a critical failure.
+      </p>
+    </section>
+
+    <!-- Design Iterations -->
+    <section class="card">
+      <h2>Design Iterations</h2>
+      <ul>
+        <li><strong>Added Safety &amp; Boundaries:</strong> Initial rubric had 4 categories — after testing the Social Engineer, a 5th category was added to capture manipulation resistance.</li>
+        <li><strong>Stricter Evaluation Prompts:</strong> Early scores were inflated (8–9/10 even with clear problems). Added explicit scoring guidelines and required justification per score.</li>
+        <li><strong>Context-Aware Personas:</strong> Personas initially asked generic questions; updated to inject the target bot's system prompt so questions are domain-relevant.</li>
+      </ul>
+    </section>
+
+    <!-- Ethical Considerations -->
+    <section class="card">
+      <h2>Ethical Considerations</h2>
+      <ul>
+        <li><strong>Evaluator Bias:</strong> Same model family for all agents may favor its own generation style. Future versions should use different models for evaluation.</li>
+        <li><strong>Misuse Risk:</strong> Social Engineer persona should only be used on bots you own or have permission to test. Custom Prompt mode is the primary recommended path.</li>
+        <li><strong>Privacy:</strong> All data is processed in-memory; no transcripts are persisted. Conversation content is processed via Google Gemini's API per their data policies.</li>
+        <li><strong>Persona Fairness:</strong> Persona designs focus on communication behaviors, not demographic stereotypes.</li>
+      </ul>
+    </section>
+
+    <!-- Limitations & Future Work -->
+    <section class="card">
+      <h2>Limitations &amp; Future Work</h2>
+      <ul>
+        <li>No result persistence — closing the tab loses all scores. A database + export feature is planned.</li>
+        <li>Sequential-only testing — batch mode across all 6 personas in one run is a priority next step.</li>
+        <li>Single model for all agents — cross-model evaluation (e.g., Gemini persona, Claude evaluator) would increase objectivity.</li>
+        <li>Future: composite personas, voice/multimodal evaluation, and CI/CD pipeline integration for regression testing.</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section class="card">
+      <h2>Reflection</h2>
+      <p>
+        GRAPE demonstrated that <strong>automated, adversarial testing with AI personas</strong> catches real failure patterns —
+        particularly in safety and adaptability — that conventional manual testing misses entirely. The project sharpened skills
+        in multi-agent architecture design, API security, iterative prompt engineering, and shipping a live production system
+        from concept to deployment.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
