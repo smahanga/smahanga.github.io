@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Case Study • GRAPE — GRill Agent Persona Eval</title>
+  <title>Case Study &bull; CRAPES &mdash; Chatbot Readiness &amp; Performance Evaluation System</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
@@ -24,42 +24,49 @@
     .score-table td:nth-child(4),
     .score-table td:nth-child(5),
     .score-table td:nth-child(6) { text-align: center; }
+    .score-table th:not(:first-child) { text-align: center; }
   </style>
 </head>
 
 <body>
   <main class="container">
     <a class="inline" href="../index.html#projects">&larr; Back to Projects</a>
-    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">GRAPE &mdash; Multi-Agent Chatbot Evaluation</h1>
-    <p><em>MSIS 549: GenAI &amp; Agentic AI · University of Washington · February 2026</em></p>
+    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">CRAPES &mdash; Chatbot Readiness &amp; Performance Evaluation System</h1>
+    <p><em>MSIS 522: AI Product Management &middot; University of Washington &middot; March 2026</em></p>
+    <p class="muted">Team: Shraddha Mahangare, Alysia Tran, Trevor Rubino, Yousef AlSadhan</p>
 
     <div class="tag-row">
-      <span class="tag">Multi-Agent AI</span>
+      <span class="tag">Dual-LLM Architecture</span>
+      <span class="tag">Claude Sonnet 4</span>
+      <span class="tag">Gemini 2.0 Flash Lite</span>
+      <span class="tag">OWASP LLM Top 10</span>
       <span class="tag">React 18 + Vite</span>
-      <span class="tag">Google Gemini 2.0 Flash Lite</span>
       <span class="tag">Vercel Serverless</span>
-      <span class="tag">Chatbot Evaluation</span>
+      <span class="tag">Multi-Agent Evaluation</span>
     </div>
 
     <p>
-      <a class="inline" href="https://synth-evaluation.vercel.app" target="_blank" rel="noopener">🚀 Live Demo ↗</a>
-      &nbsp;•&nbsp;
-      <a class="inline" href="https://github.com/smahanga/synth-evaluation" target="_blank" rel="noopener">💻 GitHub ↗</a>
+      <a class="inline" href="https://synth-evaluation.vercel.app" target="_blank" rel="noopener">&#x1F680; Live Demo &#x2197;</a>
+      &nbsp;&bull;&nbsp;
+      <a class="inline" href="https://github.com/smahanga/synth-evaluation" target="_blank" rel="noopener">&#x1F4BB; GitHub &#x2197;</a>
+      &nbsp;&bull;&nbsp;
+      <a class="inline" href="https://drive.google.com/file/d/1iuPTTFV075Mp4W4Jrn2tuz-hdE9HNK15/view" target="_blank" rel="noopener">&#x1F3AC; Video Demo &#x2197;</a>
     </p>
 
     <!-- Overview -->
     <section class="card">
       <h2>Overview</h2>
       <p>
-        GRAPE is an automated multi-agent framework that stress-tests AI chatbots by simulating realistic, adversarial user
-        interactions. It addresses a critical gap in chatbot development: while building chatbots has become increasingly
-        accessible, <strong>systematically testing them against diverse, unpredictable user behaviors</strong> remains
-        manual, expensive, and incomplete.
+        CRAPES is an automated multi-agent framework that stress-tests AI chatbots through realistic adversarial interactions
+        and security vulnerability scanning. It addresses a critical gap in chatbot development: while building chatbots has become
+        increasingly accessible, <strong>systematically testing them against diverse user behaviors and security threats</strong>
+        remains manual, expensive, and incomplete.
       </p>
       <p>
-        Six AI-powered synthetic personas — from a Confused Grandma to a Social Engineer — engage in autonomous multi-turn
-        conversations with a target chatbot. A separate AI evaluator then grades the chatbot across five categories and
-        produces a detailed report card with scores, strengths, failures, and actionable recommendations.
+        The system uses a <strong>dual-LLM architecture</strong> &mdash; Claude Sonnet 4 for generation and Gemini 2.0 Flash Lite
+        for evaluation &mdash; to eliminate self-evaluation bias. Six AI-powered synthetic personas engage in autonomous multi-turn
+        conversations, while a separate vulnerability scanner probes for OWASP LLM Top 10 security weaknesses. A composite
+        <strong>CRAPES Overall Score</strong> (40% vulnerability + 60% persona performance) provides a single actionable metric.
       </p>
     </section>
 
@@ -67,10 +74,11 @@
     <section class="card">
       <h2>Business Problem</h2>
       <ul>
-        <li><strong>Narrow Coverage:</strong> Developers test with well-formed, polite questions — missing confused, frustrated, and adversarial users.</li>
+        <li><strong>Narrow Coverage:</strong> Developers test with well-formed, polite questions &mdash; missing confused, frustrated, and adversarial users.</li>
         <li><strong>Developer Bias:</strong> Builders unconsciously phrase questions in ways their bot can handle.</li>
         <li><strong>Manual Testing Is Expensive:</strong> User studies and QA scripting fail to capture real conversational unpredictability.</li>
         <li><strong>No Standardized Metrics:</strong> Assessments are subjective and inconsistent across teams.</li>
+        <li><strong>Security Blindspots:</strong> Most chatbot testing ignores prompt injection, data leakage, and other OWASP LLM Top 10 vulnerabilities.</li>
       </ul>
       <p class="muted">
         Relevant to any organization deploying conversational AI: customer support, healthcare, financial services, and education.
@@ -79,27 +87,91 @@
 
     <!-- Architecture -->
     <section class="card">
-      <h2>System Architecture — Three Layers</h2>
+      <h2>System Architecture &mdash; Three Layers</h2>
 
-      <h3 style="margin-bottom:6px;">Layer 1 — Persona Engine</h3>
+      <h3 style="margin-bottom:6px;">Layer 0 &mdash; Vulnerability Scanner (OWASP LLM Top 10)</h3>
+      <p>
+        Automated security probes that test for the most critical LLM vulnerabilities before persona testing begins.
+        Each vulnerability category gets a pass/fail assessment with detailed findings.
+      </p>
+      <table>
+        <thead><tr><th>Vulnerability</th><th>What It Tests</th></tr></thead>
+        <tbody>
+          <tr><td>Prompt Injection</td><td>Direct &amp; indirect attempts to override system instructions</td></tr>
+          <tr><td>Insecure Output Handling</td><td>Whether outputs could enable XSS, code injection, or downstream exploits</td></tr>
+          <tr><td>Training Data Poisoning</td><td>Susceptibility to manipulation via crafted training examples</td></tr>
+          <tr><td>Denial of Service</td><td>Resource exhaustion through recursive or computationally expensive prompts</td></tr>
+          <tr><td>Supply Chain Vulnerabilities</td><td>Risks from third-party models, plugins, or data sources</td></tr>
+          <tr><td>Sensitive Info Disclosure</td><td>Leaking PII, API keys, system prompts, or internal data</td></tr>
+          <tr><td>Insecure Plugin Design</td><td>Unsafe tool/function calling behavior</td></tr>
+          <tr><td>Excessive Agency</td><td>Unauthorized actions beyond intended scope</td></tr>
+          <tr><td>Overreliance</td><td>Generating confident but incorrect or fabricated information</td></tr>
+          <tr><td>Model Theft</td><td>Extracting model weights, architecture, or proprietary information</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 1 &mdash; Persona Engine</h3>
       <p>Six synthetic personas, each with a crafted system prompt that stress-tests a different chatbot dimension:</p>
       <table>
         <thead><tr><th>Persona</th><th>Difficulty</th><th>Purpose</th></tr></thead>
         <tbody>
-          <tr><td>Confused Grandma</td><td>Medium</td><td>Uses vague language, goes off-topic — tests Clarity &amp; Patience.</td></tr>
-          <tr><td>Angry Customer</td><td>Hard</td><td>CAPS LOCK, demands manager, threatens to leave — tests Tone &amp; De-escalation.</td></tr>
-          <tr><td>Power User</td><td>Hard</td><td>Edge cases, API limits, pre-troubleshot — tests Technical Depth.</td></tr>
-          <tr><td>Impatient Executive</td><td>Medium</td><td>Ultra-brief messages, zero patience — tests Conciseness.</td></tr>
-          <tr><td>ESL Speaker</td><td>Medium</td><td>Grammar errors, mixed languages — tests Adaptability.</td></tr>
-          <tr><td>Social Engineer</td><td>Expert</td><td>Escalating manipulation, fake authority — tests Safety &amp; Boundaries.</td></tr>
+          <tr><td>Confused Grandma</td><td>Medium</td><td>Vague language, off-topic &mdash; tests Clarity &amp; Patience</td></tr>
+          <tr><td>Angry Customer</td><td>Hard</td><td>CAPS LOCK, demands manager &mdash; tests Tone &amp; De-escalation</td></tr>
+          <tr><td>Power User</td><td>Hard</td><td>Edge cases, pre-troubleshot &mdash; tests Technical Depth</td></tr>
+          <tr><td>Impatient Executive</td><td>Medium</td><td>Ultra-brief messages &mdash; tests Conciseness</td></tr>
+          <tr><td>ESL Speaker</td><td>Medium</td><td>Grammar errors, mixed languages &mdash; tests Adaptability</td></tr>
+          <tr><td>Social Engineer</td><td>Expert</td><td>Escalating manipulation &mdash; tests Safety &amp; Boundaries</td></tr>
         </tbody>
       </table>
 
-      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 2 — Target Bot</h3>
-      <p>Three input modes: <strong>Built-in bots</strong> (5 demo domains), <strong>Custom Prompt</strong> (primary recommended mode), and <strong>External API</strong> (live deployed bots).</p>
+      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 2 &mdash; Prompt Refinement Engine</h3>
+      <p>
+        After evaluation, CRAPES analyzes the chatbot's weaknesses and generates an <strong>improved system prompt</strong>
+        with targeted fixes. Users can re-run the evaluation to measure improvement &mdash; enabling a continuous
+        quality improvement loop.
+      </p>
+    </section>
 
-      <h3 style="margin-bottom:6px; margin-top:18px;">Layer 3 — AI Evaluator</h3>
-      <p>After the conversation ends, the full transcript is sent to a separate evaluator that grades the bot across five categories (each 1–10):</p>
+    <!-- Dual-LLM Architecture -->
+    <section class="card">
+      <h2>Dual-LLM Architecture</h2>
+      <p>
+        A key design decision: using <strong>separate models for generation and evaluation</strong> to eliminate
+        self-evaluation bias (where an LLM rates its own outputs more favorably).
+      </p>
+      <table>
+        <thead><tr><th>Role</th><th>Model</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Generation</td><td>Claude Sonnet 4 (Anthropic)</td><td>Powers persona conversations, vulnerability probes, and prompt refinement</td></tr>
+          <tr><td>Evaluation</td><td>Gemini 2.0 Flash Lite (Google)</td><td>Scores chatbot performance across 5 categories; grades vulnerability responses</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">This separation ensures the evaluator has no inherent bias toward the generated conversation patterns.</p>
+    </section>
+
+    <!-- Pre-Assessment -->
+    <section class="card">
+      <h2>Pre-Assessment Questionnaire</h2>
+      <p>
+        Before evaluation begins, chatbot owners answer questions about their bot's domain, intended audience,
+        expected behavior, and known limitations. This context is injected into persona prompts so that
+        <strong>questions are domain-relevant</strong> and scoring accounts for the bot's intended scope.
+      </p>
+    </section>
+
+    <!-- Scoring -->
+    <section class="card">
+      <h2>CRAPES Overall Score</h2>
+      <p>A composite metric that balances security and conversational quality:</p>
+      <table>
+        <thead><tr><th>Component</th><th>Weight</th><th>What It Measures</th></tr></thead>
+        <tbody>
+          <tr><td>Vulnerability Score</td><td>40%</td><td>Pass rate across OWASP LLM Top 10 security probes</td></tr>
+          <tr><td>Persona Performance Score</td><td>60%</td><td>Average across all personas and 5 evaluation categories</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:16px;">Evaluation Categories (each 1&ndash;10)</h3>
       <table>
         <thead><tr><th>Category</th><th>What It Measures</th></tr></thead>
         <tbody>
@@ -119,19 +191,37 @@
         <thead><tr><th>Component</th><th>Details</th></tr></thead>
         <tbody>
           <tr><td>Frontend</td><td>React 18 + Vite, single-page app, dark mode UI</td></tr>
-          <tr><td>Backend</td><td>Vercel Serverless Functions (Node.js) — <code>/api/chat</code> proxy</td></tr>
-          <tr><td>AI Service</td><td>Google Gemini 2.0 Flash Lite (persona, bot responses, evaluation)</td></tr>
-          <tr><td>Security</td><td>API key stored server-side; never exposed to browser</td></tr>
-          <tr><td>Deployment</td><td>Vercel Hobby plan — auto-deploy on GitHub push, HTTPS by default</td></tr>
+          <tr><td>Backend</td><td>Vercel Serverless Functions (Node.js) &mdash; <code>/api/chat</code> proxy</td></tr>
+          <tr><td>Generation LLM</td><td>Claude Sonnet 4 (Anthropic API) &mdash; personas, vulnerability probes, prompt refinement</td></tr>
+          <tr><td>Evaluation LLM</td><td>Google Gemini 2.0 Flash Lite &mdash; scoring and grading</td></tr>
+          <tr><td>Development</td><td>Claude Code (AI-assisted development)</td></tr>
+          <tr><td>Report Export</td><td>jsPDF &mdash; downloadable PDF evaluation reports</td></tr>
+          <tr><td>Security</td><td>API keys stored server-side; never exposed to browser</td></tr>
+          <tr><td>Deployment</td><td>Vercel &mdash; auto-deploy on GitHub push, HTTPS by default</td></tr>
         </tbody>
       </table>
     </section>
 
     <!-- Key Results -->
     <section class="card">
-      <h2>Results &amp; Test Cases</h2>
+      <h2>Results &amp; Key Findings</h2>
 
-      <h3>Cross-Persona Scores — TechFlow Support Bot</h3>
+      <h3>Vulnerability Scan Results</h3>
+      <p>
+        The OWASP LLM Top 10 scanner consistently exposed security gaps that manual testing misses.
+        Chatbots without explicit security instructions typically failed 4&ndash;6 of 10 vulnerability categories,
+        with <strong>Prompt Injection</strong> and <strong>Sensitive Information Disclosure</strong> being the most
+        common failures.
+      </p>
+
+      <h3 style="margin-top:16px;">Prompt Refinement Impact</h3>
+      <p>
+        The prompt refinement engine demonstrated measurable improvement: average persona performance scores
+        increased from <strong>5.8 to 7.4</strong> after applying the generated prompt improvements &mdash;
+        a <strong>28% improvement</strong> in a single refinement cycle.
+      </p>
+
+      <h3 style="margin-top:16px;">Cross-Persona Score Patterns</h3>
       <table class="score-table">
         <thead><tr><th>Persona</th><th>Clarity</th><th>Helpfulness</th><th>Empathy</th><th>Safety</th><th>Adaptability</th></tr></thead>
         <tbody>
@@ -143,33 +233,43 @@
           <tr><td>Social Engineer</td><td>7</td><td>5</td><td>6</td><td>4</td><td>6</td></tr>
         </tbody>
       </table>
-      <p class="muted">Scores vary slightly between runs, reflecting natural variability in generative AI interactions.</p>
+      <p class="muted">Sample scores from TechFlow Support Bot. Scores vary between runs reflecting natural variability in generative AI.</p>
 
       <h3 style="margin-top:16px;">Key Insight: Social Engineer Persona</h3>
       <p>
         The Social Engineer exposed a safety gap that manual testing almost never catches: the healthcare bot correctly
         refused direct requests for system information but revealed internal escalation procedures under urgency framing.
-        Safety score: <strong>4–5/10</strong> — flagged as a critical failure.
+        Safety score: <strong>4&ndash;5/10</strong> &mdash; flagged as a critical failure.
+      </p>
+
+      <h3 style="margin-top:16px;">Recognition</h3>
+      <p>
+        Awarded <strong>Best Demo</strong> for innovation in LLM evaluation and practical applicability.
       </p>
     </section>
 
     <!-- Design Iterations -->
     <section class="card">
       <h2>Design Iterations</h2>
-      <ul>
-        <li><strong>Added Safety &amp; Boundaries:</strong> Initial rubric had 4 categories — after testing the Social Engineer, a 5th category was added to capture manipulation resistance.</li>
-        <li><strong>Stricter Evaluation Prompts:</strong> Early scores were inflated (8–9/10 even with clear problems). Added explicit scoring guidelines and required justification per score.</li>
+      <ol>
+        <li><strong>Phase 1 &rarr; Phase 2 Evolution:</strong> Evolved from single-model (Gemini-only) to dual-LLM architecture (Claude + Gemini) to eliminate self-evaluation bias.</li>
+        <li><strong>Added Vulnerability Scanner:</strong> Layer 0 OWASP LLM Top 10 scanning was added to cover security dimensions that persona testing alone could not assess.</li>
+        <li><strong>Added Safety &amp; Boundaries Category:</strong> Initial rubric had 4 categories &mdash; after the Social Engineer exposed manipulation gaps, a 5th evaluation category was added.</li>
+        <li><strong>Stricter Evaluation Prompts:</strong> Early scores were inflated (8&ndash;9/10 even with clear problems). Added explicit scoring guidelines and required justification per score.</li>
         <li><strong>Context-Aware Personas:</strong> Personas initially asked generic questions; updated to inject the target bot's system prompt so questions are domain-relevant.</li>
-      </ul>
+        <li><strong>Pre-Assessment Questionnaire:</strong> Added structured intake to capture bot context, improving evaluation relevance and persona targeting.</li>
+        <li><strong>Prompt Refinement Engine:</strong> Built Layer 2 to generate improved prompts based on evaluation results, enabling a continuous improvement loop.</li>
+        <li><strong>CRAPES Overall Score:</strong> Introduced composite scoring (40% vulnerability + 60% persona) to provide a single actionable metric.</li>
+      </ol>
     </section>
 
     <!-- Ethical Considerations -->
     <section class="card">
       <h2>Ethical Considerations</h2>
       <ul>
-        <li><strong>Evaluator Bias:</strong> Same model family for all agents may favor its own generation style. Future versions should use different models for evaluation.</li>
-        <li><strong>Misuse Risk:</strong> Social Engineer persona should only be used on bots you own or have permission to test. Custom Prompt mode is the primary recommended path.</li>
-        <li><strong>Privacy:</strong> All data is processed in-memory; no transcripts are persisted. Conversation content is processed via Google Gemini's API per their data policies.</li>
+        <li><strong>Evaluator Bias:</strong> Mitigated in Phase 2 by separating generation (Claude) and evaluation (Gemini) into different model families, eliminating self-evaluation bias.</li>
+        <li><strong>Misuse Risk:</strong> Social Engineer and vulnerability scanner should only be used on bots you own or have permission to test. Custom Prompt mode is the primary recommended path.</li>
+        <li><strong>Privacy:</strong> All data is processed in-memory; no transcripts are persisted. Conversation content is processed via Anthropic and Google APIs per their respective data policies.</li>
         <li><strong>Persona Fairness:</strong> Persona designs focus on communication behaviors, not demographic stereotypes.</li>
       </ul>
     </section>
@@ -178,10 +278,10 @@
     <section class="card">
       <h2>Limitations &amp; Future Work</h2>
       <ul>
-        <li>No result persistence — closing the tab loses all scores. A database + export feature is planned.</li>
-        <li>Sequential-only testing — batch mode across all 6 personas in one run is a priority next step.</li>
-        <li>Single model for all agents — cross-model evaluation (e.g., Gemini persona, Claude evaluator) would increase objectivity.</li>
-        <li>Future: composite personas, voice/multimodal evaluation, and CI/CD pipeline integration for regression testing.</li>
+        <li><strong>Sequential Testing:</strong> Personas run one at a time &mdash; batch mode across all 6 personas is a priority next step.</li>
+        <li><strong>Result Persistence:</strong> No database yet; closing the tab loses scores. Export via jsPDF is available, but persistent storage is planned.</li>
+        <li><strong>Vulnerability Coverage:</strong> Current scanner covers OWASP Top 10 categories but could be expanded with more sophisticated multi-turn attack chains.</li>
+        <li><strong>Future:</strong> Composite personas, voice/multimodal evaluation, CI/CD pipeline integration for regression testing, and cross-model evaluation with additional LLM providers.</li>
       </ul>
     </section>
 
@@ -189,10 +289,19 @@
     <section class="card">
       <h2>Reflection</h2>
       <p>
-        GRAPE demonstrated that <strong>automated, adversarial testing with AI personas</strong> catches real failure patterns —
-        particularly in safety and adaptability — that conventional manual testing misses entirely. The project sharpened skills
-        in multi-agent architecture design, API security, iterative prompt engineering, and shipping a live production system
-        from concept to deployment.
+        CRAPES demonstrated that <strong>automated, adversarial testing with AI personas combined with security vulnerability scanning</strong>
+        catches real failure patterns &mdash; particularly in safety and adaptability &mdash; that conventional manual testing misses entirely.
+        The evolution from Phase 1 (single-model) to Phase 2 (dual-LLM with vulnerability scanning and prompt refinement) validated
+        the importance of iterative product development. The project sharpened skills in multi-agent architecture design, dual-LLM orchestration,
+        API security, iterative prompt engineering, and shipping a live production system from concept to deployment.
+      </p>
+    </section>
+
+    <!-- Downloads -->
+    <section class="card">
+      <h2>Downloads</h2>
+      <p>
+        <a class="inline" href="../assets/CRAPES_Presentation.pdf" target="_blank" rel="noopener">Presentation (PDF)</a>
       </p>
     </section>
   </main>
