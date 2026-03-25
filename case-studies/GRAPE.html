@@ -6,41 +6,31 @@
   <title>Case Study • GRAPE — GRill Agent Persona Eval</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .card {
-      background: var(--card);
-      padding: 22px 24px;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
-      margin-bottom: 20px;
-    }
-    .card h2 { margin-top: 0; }
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
     .tag {
-      background: #eef2ff;
-      color: var(--accent);
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-electric);
+      border: 1px solid rgba(59, 130, 246, 0.15);
       padding: 4px 10px;
       border-radius: 20px;
       font-size: 13px;
       font-weight: 600;
     }
     table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
-    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
-    th { background: #f8fafc; font-weight: 600; color: #334155; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+    th { background: var(--bg-secondary); font-weight: 600; color: var(--text); }
     .score-table td:nth-child(2),
     .score-table td:nth-child(3),
     .score-table td:nth-child(4),
     .score-table td:nth-child(5),
     .score-table td:nth-child(6) { text-align: center; }
-    .inline { color: var(--accent); text-decoration: none; font-weight: 600; }
-    .inline:hover { text-decoration: underline; }
-    .muted { color: var(--muted); font-size: 14px; }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <a class="inline" href="../index.html">← Back to Projects</a>
-    <h1>GRAPE — GRill Agent Persona Eval: Built a Multi-Agent System for Automated Chatbot Evaluation</h1>
+    <a class="inline" href="../index.html#projects">&larr; Back to Projects</a>
+    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">GRAPE &mdash; Multi-Agent Chatbot Evaluation</h1>
     <p><em>MSIS 549: GenAI &amp; Agentic AI · University of Washington · February 2026</em></p>
 
     <div class="tag-row">
