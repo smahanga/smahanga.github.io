@@ -4,44 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shraddha Mahangare — Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Portfolio of Shraddha Mahangare — Product-focused technologist with 5+ years of IT experience.">
+  <meta name="description" content="Portfolio of Shraddha Mahangare — Product-focused technologist with 5+ years of IT experience in ERP integrations, system optimization, and cross-functional solution delivery.">
 </head>
 <body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
         <a href="#hero">Shraddha Mahangare</a>
       </div>
       <nav class="nav">
+        <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
         <a href="#contact" class="cta">Contact</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
     <section id="hero" class="hero">
+      <div class="grid-bg"></div>
       <div class="container hero-grid">
         <div class="hero-text">
-          <h1>Hi — I’m <span class="accent">Shraddha Mahangare</span></h1>
-          <img src="assets/profile.jpeg" alt="Shraddha Mahangare" class="hero-photo" />
-          <p class="lead">Product-focused technologist with <strong>5+ years of experience</strong> in ERP integrations, system optimization, and cross-functional solution delivery. Currently pursuing an MS in Information Systems at UW, expanding expertise in product management, cloud technologies, and data-driven decision making.</p>
+          <span class="hero-label">Product-Focused Technologist</span>
+          <h1>Building systems that <span class="accent">connect</span>, <span class="accent-violet">optimize</span> &amp; <span class="accent">scale</span></h1>
+          <p class="lead">5+ years of experience in ERP integrations, system optimization, and cross-functional solution delivery. Currently pursuing an MS in Information Systems at UW, expanding into product management, cloud technologies, and data-driven decision making.</p>
           <p class="hero-actions">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn btn-outline">Get in touch</a>
+            <a href="#projects" class="btn">View My Work &darr;</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </p>
         </div>
         <div class="hero-card">
+          <div class="profile-photo">
+            <img src="assets/profile.jpeg" alt="Shraddha Mahangare" />
+          </div>
           <div class="hero-info">
             <h3>Currently</h3>
-            <p>MSIS Student @ University of Washington · Seattle, WA</p>
+            <p><span class="status-dot"></span>MSIS Student @ University of Washington</p>
+            <p>Seattle, WA</p>
             <p class="muted">Open to product management, IT consulting, and data engineering opportunities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <span class="section-label reveal">About Me</span>
+        <h2 class="reveal">Background &amp; Experience</h2>
+        <div class="about-grid">
+          <img src="assets/profile.jpeg" alt="Shraddha Mahangare" class="about-photo reveal" />
+          <div class="about-text">
+            <p class="reveal">Product-focused technologist with 5+ years of experience in ERP integrations, system optimization, and cross-functional solution delivery. Led high-impact projects for LinkedIn, skilled at defining product requirements, improving customer experiences, and aligning technical execution with business strategy.</p>
+            <p class="reveal">Currently pursuing MSIS at UW, expanding expertise in product management, cloud technologies, and data-driven decision making.</p>
+            <div class="stat-cards reveal">
+              <div class="stat-card electric">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-card violet">
+                <div class="stat-number">2025</div>
+                <div class="stat-label">MSIS @ UW</div>
+              </div>
+              <div class="stat-card cyan">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Enterprise Projects</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -50,173 +88,334 @@
     <!-- Skills -->
     <section id="skills" class="section alt">
       <div class="container">
-        <h2>Skills</h2>
+        <span class="section-label reveal">What I Do</span>
+        <h2 class="reveal">Skills &amp; Expertise</h2>
+        <p class="section-desc reveal">From enterprise systems to machine learning pipelines, I bring a blend of product thinking and technical execution.</p>
         <div class="skills-grid">
-          <div class="skill">
-            <h4>Product & Business</h4>
-            <p>Roadmap Planning . Customer Journey Mapping . User Research . Cross-functional Collaboration . Agile Execution . Requirements Analysis . Product Analytics</p>
+          <div class="skill electric reveal">
+            <span class="skill-icon">&#9878;</span>
+            <h4>Product &amp; Business</h4>
+            <p>Roadmap Planning &middot; Customer Journey Mapping &middot; User Research &middot; Cross-functional Collaboration &middot; Agile Execution &middot; Requirements Analysis &middot; Product Analytics</p>
           </div>
-          <div class="skill">
+          <div class="skill violet reveal">
+            <span class="skill-icon">&#10094;/&#10095;</span>
             <h4>Technical</h4>
-            <p>Python · SQL/PLSQL · R · HTML/CSS · Unix/Shell Scripting · Linux . Oracle E-Business Suite . Java . C++ . Microsoft Office</p>
+            <p>Python &middot; SQL/PLSQL &middot; R &middot; HTML/CSS &middot; Unix/Shell Scripting &middot; Linux &middot; Oracle E-Business Suite &middot; Java &middot; C++ &middot; REST APIs</p>
           </div>
-          <div class="skill">
-            <h4>Data & AI</h4>
-            <p>Machine Learning · NLP · TensorFlow · PyTorch · LLMs · RAG</p>
+          <div class="skill cyan reveal">
+            <span class="skill-icon">&#9883;</span>
+            <h4>Data &amp; AI</h4>
+            <p>Machine Learning &middot; NLP &middot; TensorFlow &middot; PyTorch &middot; LLMs &middot; RAG &middot; Predictive Analytics &middot; Data Visualization</p>
           </div>
-          <div class="skill">
-            <h4>AI Tools & Agentic Workflows</h4>
-            <p>Claude Code · Lovable · n8n · API Integration for Agentic Workflows · Multi-Agent System Design · Prompt Engineering · Vibe Coding</p>
+          <div class="skill green reveal">
+            <span class="skill-icon">&#9881;</span>
+            <h4>AI Tools &amp; Agentic Workflows</h4>
+            <p>Claude Code &middot; Lovable &middot; n8n &middot; API Integration for Agentic Workflows &middot; Multi-Agent System Design &middot; Prompt Engineering &middot; Vibe Coding</p>
           </div>
-          <div class="skill">
-            <h4>Cloud & Tools</h4>
-            <p>Azure · Git · Jira · VS Code · Excel · Kintana · SVN · ServiceNow · Snowflake · Tableau · Docker (basic)</p>
+          <div class="skill amber reveal">
+            <span class="skill-icon">&#9729;</span>
+            <h4>Cloud &amp; Tools</h4>
+            <p>Azure &middot; Git &middot; Jira &middot; VS Code &middot; Snowflake &middot; Tableau &middot; Docker &middot; ServiceNow &middot; SVN &middot; Excel</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects and Case Studies-->
-    <section id="projects" class="section">
+    <!-- My Approach -->
+    <section class="section">
       <div class="container">
-        <h2>Projects and Case Studies</h2>
-        <p class="muted">Here are a few highlights of my work and learning projects.</p>
+        <span class="section-label reveal">My Approach</span>
+        <h2 class="reveal">How I Work</h2>
+        <p class="section-desc reveal">A structured, iterative process that balances business needs with technical feasibility.</p>
+        <div class="process-grid">
+          <div class="process-step reveal reveal-delay-1">
+            <span class="process-number">01</span>
+            <h4>Discover</h4>
+            <p>Stakeholder interviews, workflow mapping, and problem definition</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <span class="process-number">02</span>
+            <h4>Design</h4>
+            <p>Data mapping, API contracts, requirements, and architecture</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <span class="process-number">03</span>
+            <h4>Build</h4>
+            <p>Iterative development, code reviews, and cross-team coordination</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <span class="process-number">04</span>
+            <h4>Verify</h4>
+            <p>End-to-end testing, data validation, and UAT</p>
+          </div>
+          <div class="process-step reveal">
+            <span class="process-number">05</span>
+            <h4>Launch &amp; Iterate</h4>
+            <p>Go-live support, monitoring dashboards, and continuous improvement</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section alt">
+      <div class="container">
+        <span class="section-label reveal">Portfolio</span>
+        <h2 class="reveal">Projects &amp; Case Studies</h2>
+        <p class="section-desc reveal">Highlights from enterprise work and academic research.</p>
 
         <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-meta">
-                <h3 class="project-title">GRAPE — GRill Agent Persona Eval: Built a Multi-Agent System for Automated Chatbot Evaluation</h3>
-                <p class="project-desc">
-                  Built an automated multi-agent framework that stress-tests AI chatbots using six synthetic user personas
-                  (Confused Grandma, Angry Customer, Social Engineer, and more). Each persona autonomously converses with
-                  a target chatbot for 2–8 turns; a separate AI evaluator then grades it across
-                  <strong>Clarity, Helpfulness, Tone & Empathy, Safety & Boundaries,</strong> and <strong>Adaptability</strong>,
-                  producing a detailed report card with scores, key failures, and actionable recommendations.
-                </p>
-                <ul class="project-highlights">
-                  <li>🤖 Three-layer multi-agent architecture: Persona Engine → Target Bot → AI Evaluator.</li>
-                  <li>🔐 Exposed safety vulnerabilities manual testing typically misses (e.g., Social Engineer persona).</li>
-                  <li>⚡ Deployed on Vercel with secure server-side API key management via serverless proxy.</li>
-                  <li>🛠 Stack: React 18 + Vite · Google Gemini 2.0 Flash Lite · Vercel Serverless Functions.</li>
-                </ul>
-                <p>
-                  <a class="inline" href="case-studies/GRAPE.html">View Case Study →</a>
-                  •
-                  <a class="inline" href="https://synth-evaluation.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
-                  •
-                  <a class="inline" href="https://github.com/smahanga/synth-evaluation" target="_blank" rel="noopener">GitHub ↗</a>
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <h3 class="project-title">Seattle Crime Analysis (2024)</h3>
-                <p class="project-desc">
-                  Conducted end-to-end data analysis on Seattle Police Department’s 2024 crime dataset 
-                  to uncover <strong>top offense types</strong>, <strong>hotspot neighborhoods</strong>, and 
-                  <strong>time-based patterns</strong>. Built forecasting models to predict daily incident trends 
-                  for resource planning and public safety.
-                </p>
-                <ul class="project-highlights">
-                  <li>🔍 Identified Larceny/Theft as the most common crime type.</li>
-                  <li>📍 Hotspots: Capitol Hill, Downtown, Queen Anne, and Northgate.</li>
-                  <li>📈 Forecasting: Linear Regression (MAE 19.1) outperformed Random Forest (MAE 25.3).</li>
-                  <li>💡 Recommendations: targeted patrols, improved parking security, real-time alerts.</li>
-                </ul>
-                <p>
-                  <a class="inline" href="case-studies/seattle-crime.html">View Case Study →</a> 
-                  • 
-                  <a class="inline" href="assets/MSIS502_SeattleCrime_ProjectReport.pdf" target="_blank" rel="noopener">Project Report (PDF)↓</a>
-                  • 
-                  <a class="inline" href="assets/MSIS502_SeattleCrime_Presentation.pptx" target="_blank" rel="noopener">Slides (PPTX)↓</a>
-                  • 
-                  <a class="inline" href="assets/SPD_Crime_Data_2024.csv" target="_blank" rel="noopener">Dataset (CSV)↓</a>
-                </p>
-              </div>
-            </article>
-          
-          <article class="project-card">
+          <!-- Project: GRAPE -->
+          <article class="project-card green reveal">
             <div class="project-meta">
-              <h3 class="project-title">Global ERP Procurement Integration for Fortune 500 Company Client
-                From and to Oracle E-Business Suite with Coupa Application (3rd Party System)</h3>
-              
-              <p class="project-desc">Planned, designed and implemented API-based data flow for supplier, Requisition, PO, Inoice and payment modules. 
-                These integrations said to improve procurement efficiency by 30%, streamlining business workflows.
-                The goal was to enable seamless data transfer for master and transactional data across various applications, which required not only technical expertise but also strong client communication and project management skills.
+              <p class="project-subtitle">AI / Multi-Agent System</p>
+              <h3 class="project-title">GRAPE &mdash; Multi-Agent Chatbot Evaluation</h3>
+              <p class="project-desc">
+                Built an automated multi-agent framework that stress-tests AI chatbots using six synthetic user personas (Confused Grandma, Angry Customer, Social Engineer, and more). A separate AI evaluator grades across Clarity, Helpfulness, Tone &amp; Empathy, Safety &amp; Boundaries, and Adaptability.
               </p>
-               <p>
-                  <a class="inline" href="case-studies/ERP-Integration.html">View Project Details</a> 
-               </p>
+              <div class="project-tags">
+                <span>React 18</span>
+                <span>Vite</span>
+                <span>Gemini 2.0</span>
+                <span>Vercel</span>
+              </div>
+              <ul class="project-highlights">
+                <li>Three-layer multi-agent architecture: Persona Engine, Target Bot, AI Evaluator</li>
+                <li>Exposed safety vulnerabilities manual testing typically misses</li>
+                <li>Deployed on Vercel with secure server-side API key management</li>
+              </ul>
+              <div class="project-links">
+                <a href="case-studies/GRAPE.html">View Case Study &rarr;</a>
+                <a href="https://synth-evaluation.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+                <a href="https://github.com/smahanga/synth-evaluation" target="_blank" rel="noopener">GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <!-- Project: Seattle Crime -->
+          <article class="project-card electric reveal">
             <div class="project-meta">
-              <h3 class="project-title">Automated Reconciliation Reporting for Fortune 500 Company Client</h3>
-              <p class="project-desc">Partnered with finance stakeholders to deliver automated reporting, accelerating accounting processes by 50%.</p>
+              <p class="project-subtitle">Academic Project</p>
+              <h3 class="project-title">Seattle Crime Analysis</h3>
+              <p class="project-desc">
+                End-to-end data analysis on Seattle PD's 2024 crime dataset (81,771 reports) to uncover top offense types, hotspot neighborhoods, and time-based patterns. Built forecasting models to predict daily incident trends.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>R</span>
+                <span>Linear Regression</span>
+                <span>Data Viz</span>
+              </div>
+              <ul class="project-highlights">
+                <li>Identified Larceny/Theft as the most common crime type</li>
+                <li>Hotspots: Capitol Hill, Downtown, Queen Anne, Northgate</li>
+                <li>Linear Regression (MAE 19.1) outperformed Random Forest (MAE 25.3)</li>
+                <li>Recommendations: targeted patrols, improved parking security</li>
+              </ul>
+              <div class="project-links">
+                <a href="case-studies/seattle-crime.html">View Case Study &rarr;</a>
+                <a href="assets/MSIS502_SeattleCrime_ProjectReport.pdf" target="_blank" rel="noopener">Report (PDF)</a>
+                <a href="assets/MSIS502_SeattleCrime_Presentation.pptx" target="_blank" rel="noopener">Slides</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <!-- Project: ERP Integration -->
+          <article class="project-card violet reveal">
             <div class="project-meta">
-              <h3 class="project-title">SQL Query Optimization for Fortune 500 Company Client</h3>
-              <p class="project-desc">Improved product performance by optimizing 6 queries, reducing financial reporting time by 25%.</p>
+              <p class="project-subtitle">Enterprise Project</p>
+              <h3 class="project-title">Global ERP Procurement Integration</h3>
+              <p class="project-desc">
+                Planned, designed, and implemented API-based data flows for Supplier, Requisition, PO, Invoice, and Payment modules between Oracle E-Business Suite and Coupa for a Fortune 500 client.
+              </p>
+              <div class="project-tags">
+                <span>Oracle R12</span>
+                <span>PL/SQL</span>
+                <span>Python</span>
+                <span>REST APIs</span>
+                <span>Middleware</span>
+              </div>
+              <ul class="project-highlights">
+                <li>Procurement efficiency improved by ~30%</li>
+                <li>Month-end reconciliation effort reduced by ~50%</li>
+                <li>Data accuracy across supplier/PO/invoice up ~35%</li>
+                <li>16-month, 2-phase rollout with zero Sev-1 incidents</li>
+              </ul>
+              <div class="project-links">
+                <a href="case-studies/ERP-Integration.html">View Project Details &rarr;</a>
+              </div>
             </div>
           </article>
+
+          <!-- Project: Reconciliation -->
+          <article class="project-card cyan reveal">
+            <div class="project-meta">
+              <p class="project-subtitle">Enterprise Project</p>
+              <h3 class="project-title">Automated Reconciliation Reporting</h3>
+              <p class="project-desc">
+                Partnered with finance stakeholders to deliver automated reporting for a Fortune 500 client, accelerating accounting processes by 50%.
+              </p>
+              <div class="project-tags">
+                <span>PL/SQL</span>
+                <span>Oracle</span>
+                <span>Finance</span>
+              </div>
+              <ul class="project-highlights">
+                <li>Automated manual reporting workflows end-to-end</li>
+                <li>Accounting process acceleration of 50%</li>
+                <li>Reduced manual errors in financial reconciliation</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Project: SQL Optimization -->
+          <article class="project-card amber reveal">
+            <div class="project-meta">
+              <p class="project-subtitle">Enterprise Project</p>
+              <h3 class="project-title">SQL Query Optimization</h3>
+              <p class="project-desc">
+                Improved product performance by optimizing 6 critical queries for a Fortune 500 client, reducing financial reporting time by 25%.
+              </p>
+              <div class="project-tags">
+                <span>SQL</span>
+                <span>Performance Tuning</span>
+                <span>Oracle</span>
+              </div>
+              <ul class="project-highlights">
+                <li>Optimized 6 critical database queries</li>
+                <li>Financial reporting time reduced by 25%</li>
+                <li>Improved overall product responsiveness</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey / Timeline -->
+    <section id="journey" class="section">
+      <div class="container">
+        <span class="section-label reveal">My Journey</span>
+        <h2 class="reveal">Career Timeline</h2>
+        <p class="section-desc reveal">Key milestones that shaped my path from enterprise IT to product-focused technologist.</p>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2024 &mdash; Present</span>
+            <h4>MSIS at University of Washington</h4>
+            <p>Pursuing graduate studies in Information Systems &mdash; product management, machine learning, cybersecurity, and business decision modeling.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2019 &mdash; 2024</span>
+            <h4>Senior Application Development Analyst</h4>
+            <p>Led high-impact ERP integration and optimization projects for LinkedIn and Fortune 500 clients. Designed API-based data flows, automated reconciliation reporting, and optimized critical SQL queries.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2018 &mdash; 2019</span>
+            <h4>Application Development Analyst</h4>
+            <p>Built expertise in Oracle E-Business Suite, PL/SQL, and cross-functional delivery. Contributed to enterprise integration projects and client-facing solution design.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-year">2017 &mdash; 2018</span>
+            <h4>Associate Application Development Analyst</h4>
+            <p>Began career in enterprise IT, learning system architecture, database design, and agile delivery practices.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section alt">
-      <div class="container contact-grid">
-        <div>
-          <h2>Contact</h2>
-          <p>If you’d like to collaborate, discuss opportunities, or just say hi — feel free to connect with me!</p>
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:shraddha.mahangare@gmail.com">shraddha.mahangare@gmail.com</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shraddha-mahangare/" target="_blank">linkedin.com/in/shraddha-mahangare</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/smahanga/smahanga.github.io" target="_blank">github.com/smahanga</a></li>
-            <li><strong>Resume:</strong> <a href="assets/Shraddha_Mahangare_Resume.pdf" target="_blank" download>Download PDF</a></li>
-          </ul>
-        </div>
+      <div class="container">
+        <span class="section-label reveal">Get In Touch</span>
+        <h2 class="reveal">Let's Connect</h2>
+        <p class="section-desc reveal">Whether you'd like to collaborate, discuss opportunities, or just say hi &mdash; I'd love to hear from you.</p>
 
-        <form class="contact-form" action="mailto:shraddha.mahangare@gmail.com" method="post" enctype="text/plain">
-          <label>
-            <span>Your name</span>
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-          <label>
-            <span>Your email</span>
-            <input type="email" name="email" placeholder="you@example.com" required>
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="6" placeholder="Say hello..." required></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn">Send</button>
-            <button type="reset" class="btn btn-outline">Reset</button>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-cards">
+              <div class="contact-card electric reveal">
+                <div class="contact-label">Email</div>
+                <p class="contact-value"><a href="mailto:shraddha.mahangare@gmail.com">shraddha.mahangare@gmail.com</a></p>
+              </div>
+              <div class="contact-card violet reveal">
+                <div class="contact-label">LinkedIn</div>
+                <p class="contact-value"><a href="https://www.linkedin.com/in/shraddha-mahangare/" target="_blank">linkedin.com/in/shraddha-mahangare</a></p>
+              </div>
+              <div class="contact-card cyan reveal">
+                <div class="contact-label">GitHub</div>
+                <p class="contact-value"><a href="https://github.com/smahanga/smahanga.github.io" target="_blank">github.com/smahanga</a></p>
+              </div>
+              <div class="contact-card amber reveal">
+                <div class="contact-label">Resume</div>
+                <p class="contact-value"><a href="assets/Shraddha_Mahangare_Resume.pdf" target="_blank" download>Download PDF</a></p>
+              </div>
+            </div>
           </div>
-        </form>
+
+          <form class="contact-form reveal" action="mailto:shraddha.mahangare@gmail.com" method="post" enctype="text/plain">
+            <label>
+              <span>Your name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Your email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Say hello..." required></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn">Send Message</button>
+              <button type="reset" class="btn btn-outline">Reset</button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Shraddha Mahangare. Built with ❤️.</p>
+      <p>&copy; <span id="year"></span> Shraddha Mahangare. Built with care.</p>
     </div>
   </footer>
 
   <script>
+    // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Close nav when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
     });
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollTop / scrollHeight;
+      progressBar.style.transform = `scaleX(${progress})`;
+    });
+
+    // Scroll reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>

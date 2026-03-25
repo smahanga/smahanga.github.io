@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Case Study • Seattle Crime Analysis (2024)</title>
+  <title>Case Study - Seattle Crime Analysis (2024)</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
   <main class="container">
-    <a class="inline" href="../index.html">← Back to Projects</a>
-    <h1>Seattle Crime Analysis (2024)</h1>
-    <p><em>MSIS 502 • Team 4: Yousef, Alysia, Shraddha, Trevor</em></p>
+    <a class="inline" href="../index.html#projects">&larr; Back to Projects</a>
+    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">Seattle Crime Analysis (2024)</h1>
+    <p class="muted"><em>MSIS 502 &middot; Team 4: Yousef, Alysia, Shraddha, Trevor</em></p>
 
     <!-- Overview -->
     <section class="card">
       <h2>Overview</h2>
       <p>
-        A data-driven study of Seattle Police Department’s 2024 crime data (81,771 reports) to identify
+        A data-driven study of Seattle Police Department's 2024 crime data (81,771 reports) to identify
         <strong>top offenses</strong>, <strong>hotspot neighborhoods</strong>, and <strong>temporal trends</strong>.
         We also developed <strong>daily incident forecasts</strong> to guide staffing and prevention strategies.
       </p>
@@ -49,25 +49,19 @@
       <ul>
         <li><strong>Top category:</strong> Larceny/Theft (vehicle-related thefts prominent).</li>
         <li><strong>Hotspots:</strong> Capitol Hill, Downtown, Queen Anne, Northgate, South Lake Union.</li>
-        <li><strong>Seasonality:</strong> Lower incidents in Feb–Mar; higher in Sep–Oct.</li>
-        <li><strong>Hourly/Weekly:</strong> Weekday peaks in late morning–early afternoon; lowest 12–5 a.m.</li>
+        <li><strong>Seasonality:</strong> Lower incidents in Feb&ndash;Mar; higher in Sep&ndash;Oct.</li>
+        <li><strong>Hourly/Weekly:</strong> Weekday peaks in late morning&ndash;early afternoon; lowest 12&ndash;5 a.m.</li>
       </ul>
-
-      <!-- Optional visuals -->
-      <!--
-      <img class="card" src="../assets/images/seattle-crime/top-categories.png" alt="Top crime categories" />
-      <img class="card" src="../assets/images/seattle-crime/hotspots.png" alt="Hotspot map" />
-      -->
     </section>
 
     <!-- Modeling -->
     <section class="card">
-      <h2>Modeling & Forecasting</h2>
-      <p><strong>Goal:</strong> Forecast daily citywide incidents (train Jan–Oct 2024, validate Nov–Dec 2024).</p>
+      <h2>Modeling &amp; Forecasting</h2>
+      <p><strong>Goal:</strong> Forecast daily citywide incidents (train Jan&ndash;Oct 2024, validate Nov&ndash;Dec 2024).</p>
       <ul>
         <li><strong>Features:</strong> trend index, weekday dummies, annual seasonality (sin/cos), date continuity.</li>
-        <li><strong>Linear Regression:</strong> MAE 19.1  RMSE 23.3 — best overall accuracy.</li>
-        <li><strong>Random Forest:</strong> MAE 25.31  RMSE 31.14 — captured short-term spikes.</li>
+        <li><strong>Linear Regression:</strong> MAE 19.1 &middot; RMSE 23.3 &mdash; best overall accuracy.</li>
+        <li><strong>Random Forest:</strong> MAE 25.31 &middot; RMSE 31.14 &mdash; captured short-term spikes.</li>
       </ul>
       <p><em>Takeaway:</em> Simpler seasonal-trend features generalized best; richer multi-year data could further improve performance.</p>
     </section>
@@ -84,10 +78,10 @@
 
     <!-- Challenges -->
     <section class="card">
-      <h2>Challenges & Next Steps</h2>
+      <h2>Challenges &amp; Next Steps</h2>
       <ul>
-        <li>One-year window limits seasonality detection → extend to multi-year trends.</li>
-        <li>Ambiguity between report vs offense timestamps → align with response-time data.</li>
+        <li>One-year window limits seasonality detection &rarr; extend to multi-year trends.</li>
+        <li>Ambiguity between report vs offense timestamps &rarr; align with response-time data.</li>
         <li>Integrate socioeconomic and environmental covariates for improved forecasting.</li>
       </ul>
     </section>
@@ -96,9 +90,11 @@
     <section class="card">
       <h2>Downloads</h2>
       <p>
-        <a class="inline" href="../assets/docs/MSIS502_SeattleCrime_ProjectReport.pdf" target="_blank" rel="noopener">📄 Project Report (PDF)</a>
-        •
-        <a class="inline" href="../assets/docs/MSIS502_SeattleCrime_Presentation.pptx" target="_blank" rel="noopener">🖥️ Slides (PPTX)</a>
+        <a class="inline" href="../assets/MSIS502_SeattleCrime_ProjectReport.pdf" target="_blank" rel="noopener">Project Report (PDF)</a>
+        &middot;
+        <a class="inline" href="../assets/MSIS502_SeattleCrime_Presentation.pptx" target="_blank" rel="noopener">Slides (PPTX)</a>
+        &middot;
+        <a class="inline" href="../assets/SPD_Crime_Data_2024.csv" target="_blank" rel="noopener">Dataset (CSV)</a>
       </p>
     </section>
   </main>
