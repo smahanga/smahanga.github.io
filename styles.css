@@ -214,11 +214,11 @@ img { max-width: 100%; height: auto; }
 }
 
 .hero-card .profile-photo img {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border-light);
+  border: 3px solid var(--border-light);
 }
 
 .hero-info h3 {
