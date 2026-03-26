@@ -489,6 +489,7 @@ h2 {
 .timeline-item:nth-child(3)::before { border-color: var(--accent-cyan); }
 .timeline-item:nth-child(4)::before { border-color: var(--accent-primary); }
 .timeline-item:nth-child(5)::before { border-color: var(--accent-electric); }
+.timeline-item:nth-child(6)::before { border-color: var(--accent-violet); }
 
 .timeline-year {
   font-family: var(--font-mono);
