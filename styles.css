@@ -436,7 +436,7 @@ h2 {
 
 .process-step h4 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 8px;
   color: var(--text);
 }
@@ -501,7 +501,7 @@ h2 {
 
 .timeline-item h4 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 6px;
   color: var(--text);
 }
