@@ -224,7 +224,8 @@ img { max-width: 100%; height: auto; }
 
 .hero-info h3 {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--accent-electric);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -269,10 +270,10 @@ img { max-width: 100%; height: auto; }
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--accent-electric);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 12px;
   display: block;
@@ -491,10 +492,10 @@ h2 {
 
 .timeline-year {
   font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--accent-electric);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin-bottom: 4px;
   display: block;
 }
@@ -541,10 +542,10 @@ h2 {
 
 .project-subtitle {
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--accent-electric);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 8px;
 }
