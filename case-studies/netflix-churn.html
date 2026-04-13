@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study &bull; Netflix Customer Churn Analysis</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; background: rgba(37, 99, 235, 0.1); color: var(--accent-electric); border: 1px solid rgba(37, 99, 235, 0.15); font-weight: 500; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; color: var(--text-muted); }
+    th { background: var(--bg-secondary); color: var(--text); font-weight: 600; }
+    .score-table td:nth-child(2),
+    .score-table td:nth-child(3),
+    .score-table td:nth-child(4) { text-align: center; }
+    .score-table th:not(:first-child) { text-align: center; }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <a class="inline" href="../index.html#projects">&larr; Back to Projects</a>
+    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">Netflix Customer Churn Analysis</h1>
+    <p><em>MSIS 510: Data Analytics &middot; University of Washington &middot; December 2025</em></p>
+    <p class="muted">Team: Alysia Tran, Trevor Rubino, Yousef AlSadhan, Shraddha Mahangare</p>
+
+    <div class="tag-row">
+      <span class="tag">Python</span>
+      <span class="tag">Logistic Regression</span>
+      <span class="tag">Random Forest</span>
+      <span class="tag">K-Means Clustering</span>
+      <span class="tag">Google Colab</span>
+      <span class="tag">Predictive Modeling</span>
+    </div>
+
+    <!-- Overview -->
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        Netflix faces rising competition and needs a proactive, data-driven approach to reduce subscriber churn.
+        This project analyzed <strong>5,000 Netflix user records</strong> across 14 variables to identify high-risk
+        subscribers, uncover churn patterns, and build predictive models that enable <strong>targeted retention strategies</strong>.
+      </p>
+    </section>
+
+    <!-- Objectives -->
+    <section class="card">
+      <h2>Objectives</h2>
+      <ul>
+        <li><strong>Demographics:</strong> Identify core customer demographics and their relationship to churn</li>
+        <li><strong>Subscriptions:</strong> Analyze subscription tiers and their impact on churn rates</li>
+        <li><strong>Prediction:</strong> Build a model to predict churn-risk subscribers</li>
+        <li><strong>Retention:</strong> Recommend targeted strategies to reduce churn and protect revenue</li>
+      </ul>
+    </section>
+
+    <!-- Dataset -->
+    <section class="card">
+      <h2>Dataset</h2>
+      <table>
+        <thead><tr><th>Attribute</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Source</td><td>Netflix User Data from Kaggle</td></tr>
+          <tr><td>Records</td><td>5,000 rows</td></tr>
+          <tr><td>Variables</td><td>14 columns</td></tr>
+          <tr><td>Key Features</td><td>age, gender, subscription_type, watch_hours, last_login_days, region, device, monthly_fee, payment_method, number_of_profiles, avg_watch_time_per_day, favorite_genre</td></tr>
+          <tr><td>Target Variable</td><td>churned (1/0)</td></tr>
+          <tr><td>Data Quality</td><td>No missing values, no duplicates</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Exploratory Analysis -->
+    <section class="card">
+      <h2>Exploratory Analysis</h2>
+
+      <h3>Subscription Type vs. Churn Rate</h3>
+      <table class="score-table">
+        <thead><tr><th>Subscription Tier</th><th>Churn Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Basic</td><td>61.83%</td></tr>
+          <tr><td>Standard</td><td>45.44%</td></tr>
+          <tr><td>Premium</td><td>43.71%</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Basic-tier subscribers churn at significantly higher rates &mdash; nearly 20 percentage points above Premium.</p>
+
+      <h3 style="margin-top: 16px;">Churn vs. Payment Method</h3>
+      <p>
+        <strong>Gift card</strong> users had the highest churn rate, while <strong>debit and credit card</strong>
+        users had the lowest. This suggests that recurring payment methods correlate with higher retention.
+      </p>
+
+      <h3 style="margin-top: 16px;">Churn vs. Last Login</h3>
+      <p>
+        Churned customers averaged <strong>40 days</strong> since last login, compared to <strong>20 days</strong>
+        for non-churned users &mdash; a clear signal that login recency is a strong churn predictor.
+      </p>
+
+      <h3 style="margin-top: 16px;">Key Finding</h3>
+      <p>
+        <strong>Age and gender were not significant</strong> predictors of churn. Behavioral features (watch hours,
+        login recency, number of profiles) were far more predictive than demographic variables.
+      </p>
+    </section>
+
+    <!-- Feature Selection -->
+    <section class="card">
+      <h2>Feature Selection</h2>
+      <p>Used the <strong>Logit function</strong> (statsmodels) to identify statistically significant features:</p>
+      <ul>
+        <li>Watch hours</li>
+        <li>Last login days</li>
+        <li>Monthly fee</li>
+        <li>Number of profiles</li>
+        <li>Average watch time per day</li>
+      </ul>
+      <p class="muted">Age was dropped as it was not statistically significant (p = 0.692).</p>
+    </section>
+
+    <!-- Predictive Modeling -->
+    <section class="card">
+      <h2>Predictive Modeling</h2>
+      <p>Split data 75/25 into training and test sets. Compared two models:</p>
+
+      <h3>Model Comparison</h3>
+      <table class="score-table">
+        <thead><tr><th>Metric</th><th>Logistic Regression</th><th>Random Forest</th></tr></thead>
+        <tbody>
+          <tr><td>Overall Accuracy</td><td>89.12%</td><td><strong>94.32%</strong></td></tr>
+          <tr><td>Recall (TP/TP+FN)</td><td>0.9268</td><td><strong>0.9379</strong></td></tr>
+          <tr><td>Precision (TP/TP+FP)</td><td>0.8818</td><td><strong>0.9484</strong></td></tr>
+          <tr><td>F1 Score</td><td>0.9417</td><td><strong>0.9432</strong></td></tr>
+          <tr><td>ROC AUC</td><td>0.9607</td><td><strong>0.9920</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Baseline model accuracy was 0.5024. Both models significantly outperform the baseline,
+        with Random Forest achieving the highest predictive accuracy at 94.32%.
+      </p>
+
+      <h3 style="margin-top: 16px;">Random Forest Confusion Matrix</h3>
+      <table class="score-table">
+        <thead><tr><th></th><th>Predicted: No Churn</th><th>Predicted: Churn</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Actual: No Churn</strong></td><td>590 (TN)</td><td>32 (FP)</td></tr>
+          <tr><td><strong>Actual: Churn</strong></td><td>39 (FN)</td><td>589 (TP)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- K-Means Clustering -->
+    <section class="card">
+      <h2>K-Means Clustering</h2>
+      <p>Applied K-Means (k=3) to segment subscribers by monthly fee and watch hours:</p>
+      <table>
+        <thead><tr><th>Cluster</th><th>Profile</th><th>Watch Hours</th><th>Churn Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Cluster 0</td><td>Casual users at risk</td><td>~25 hrs</td><td>42%</td></tr>
+          <tr><td>Cluster 1</td><td>Inactive customers</td><td>~12 hrs</td><td>90%</td></tr>
+          <tr><td>Cluster 2</td><td>Highly engaged</td><td>~59 hrs</td><td>9%</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Cluster 1 (inactive) represents the highest-risk segment with 90% churn &mdash; the primary target for retention interventions.</p>
+    </section>
+
+    <!-- Business Recommendations -->
+    <section class="card">
+      <h2>Business Recommendations</h2>
+      <ul>
+        <li>Utilize the churn model to <strong>segment subscribers into risk groups</strong> for proactive outreach</li>
+        <li>Deploy <strong>targeted marketing strategies</strong> and personalized incentives to high-risk segments</li>
+        <li>Create <strong>retention offers to upgrade Basic customers</strong> to Standard/Premium plans, reducing the 61.83% Basic churn rate</li>
+        <li>Implement <strong>re-engagement campaigns</strong> triggered when last login exceeds 30 days</li>
+      </ul>
+    </section>
+
+    <!-- Challenges -->
+    <section class="card">
+      <h2>Challenges &amp; Limitations</h2>
+      <ul>
+        <li><strong>Small Dataset:</strong> 5,000 records limits generalizability to Netflix's actual 250M+ subscriber base</li>
+        <li><strong>Synthetic Data:</strong> Kaggle dataset does not capture real human behavior patterns</li>
+        <li><strong>Missing Variables:</strong> No data on date-joined, cancellation reasons, session duration, price change impact, or marketing email response rates</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section class="card">
+      <h2>Reflection</h2>
+      <p>
+        This project demonstrated the power of <strong>combining predictive modeling with customer segmentation</strong>
+        to drive actionable retention strategies. Random Forest's 94.32% accuracy and the K-Means clustering
+        revealed that behavioral signals (watch time, login recency) are far more predictive of churn than
+        demographics &mdash; a finding with direct implications for how streaming platforms should prioritize
+        their retention investments.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
