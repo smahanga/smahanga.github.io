@@ -132,15 +132,9 @@
                 <span>ClickHouse</span>
                 <span>Streamlit</span>
               </div>
-              <ul class="project-highlights">
-                <li>Built stage-aware detection that learns when a missing field is an error vs. normal workflow &mdash; a completed Road shipment with no delivery date is an error, a completed Sea shipment without one is expected &mdash; replacing rigid rule-based logic</li>
-                <li>Built three complementary models: Isolation Forest for structural completeness with stage-aware scoring, Extended Isolation Forest for pricing anomalies with dollar-impact explanations, and a Gaussian Mixture Model for peer-cluster deviation</li>
-                <li>Engineered a real-time GCP pipeline: SAP TM &rarr; ClickHouse &rarr; Pub/Sub &rarr; Cloud Run &rarr; Vertex AI &rarr; CloudSQL &rarr; live Streamlit dashboard</li>
-                <li>Shipped a four-page &ldquo;Data Quality Watchtower&rdquo; dashboard converting raw anomaly scores into ranked, plain-language flags the ops team actions every morning</li>
-                <li>Delivered a platform evaluation (SAP AI Core vs. Vertex AI) and a 12-month roadmap toward MCP-based agentic integration</li>
-                <li>Key insight: domain expertise turns a statistically sound model into an operationally trusted tool &mdash; translating &ldquo;anomaly score: 0.87&rdquo; into &ldquo;missing carrier SCAC on a completed linehaul, blocks invoicing&rdquo; is what gets a dashboard used instead of ignored</li>
-                <li>Team: Akanksha Singh, Yuvasri Govindasamy, Shraddha Mahangare, Graeme Tobias Ampeire</li>
-              </ul>
+              <div class="project-links">
+                <a href="case-studies/freight-anomaly-detection.html">View Details &rarr;</a>
+              </div>
             </div>
           </article>
 

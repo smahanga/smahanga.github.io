@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study &bull; Real-Time Anomaly Detection for Freight Logistics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; background: rgba(37, 99, 235, 0.1); color: var(--accent-electric); border: 1px solid rgba(37, 99, 235, 0.15); font-weight: 500; }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <a class="inline" href="../index.html#projects">&larr; Back to Projects</a>
+    <h1 style="font-family: var(--font-display); font-size: 36px; letter-spacing: -0.02em;">Real-Time Anomaly Detection for Freight Logistics</h1>
+    <p><em>Capstone project for Radiant Delivers (international freight forwarder), 8 weeks &middot; April 2026 &ndash; June 2026</em></p>
+    <p class="muted">Team: Akanksha Singh, Yuvasri Govindasamy, Shraddha Mahangare, Graeme Tobias Ampeire</p>
+
+    <div class="tag-row">
+      <span class="tag">Isolation Forest</span>
+      <span class="tag">Extended Isolation Forest</span>
+      <span class="tag">Gaussian Mixture Model</span>
+      <span class="tag">GCP / Vertex AI</span>
+      <span class="tag">Pub/Sub &amp; Cloud Run</span>
+      <span class="tag">ClickHouse</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">SAP TM</span>
+    </div>
+
+    <section class="card">
+      <h2>Overview</h2>
+      <ul>
+        <li>Designed and deployed an ML system that flags data-entry errors in freight shipments before they cause downstream cost, running across 1.4M+ SAP Transportation Management documents</li>
+        <li>My contribution: data modeling and pipeline. Owned the feature engineering / data modeling that fed the detection models and built the real-time ingestion-to-inference pipeline end to end</li>
+        <li>Solved a domain problem, not just a modeling one. Built stage-aware detection that learns when a missing field is actually an error vs. normal workflow (e.g., a completed Road shipment with no delivery date is an error; a completed Sea shipment without one is expected), replacing rigid rule-based logic</li>
+        <li>Built three complementary models: an Isolation Forest for structural completeness with stage-aware scoring, an Extended Isolation Forest for pricing anomalies with dollar-impact explanations, and a Gaussian Mixture Model for peer-cluster deviation</li>
+        <li>Engineered a real-time GCP pipeline: SAP TM &rarr; ClickHouse &rarr; Pub/Sub &rarr; Cloud Run &rarr; Vertex AI &rarr; CloudSQL &rarr; live Streamlit dashboard</li>
+        <li>Shipped a four-page &ldquo;Data Quality Watchtower&rdquo; dashboard that converts raw anomaly scores into ranked, plain-language flags the ops team actions every morning</li>
+        <li>Delivered a platform evaluation (SAP AI Core vs. Vertex AI) and a 12-month roadmap toward MCP-based agentic integration</li>
+        <li>Key insight: domain expertise is what turns a statistically sound model into an operationally trusted tool. Translating &ldquo;anomaly score: 0.87&rdquo; into &ldquo;missing carrier SCAC on a completed linehaul, blocks invoicing&rdquo; is what gets a dashboard used instead of ignored</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>
